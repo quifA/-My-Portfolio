@@ -1,0 +1,278 @@
+:root{
+  --bg1:#0e0f12;
+  --bg2:#0b0c0f;
+  --line:rgba(255,255,255,.06);
+  --line-strong:rgba(255,255,255,.12);
+  --text:#e9e9e9;
+  --muted:#b5b5b5;
+  --card:#111319cc;    /* زجاج خفيف */
+  --border:#ffffff1a;
+  --primary:#ffffff;   /* أبيض كلون رئيسي */
+  --accent:#d1d1d1;    /* لمسات خفيفة رمادية */
+  --radius:16px;
+  --step:54px;         /* حجم مربعات الشبكة */
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body {
+  margin: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: #000000f4;
+  color: #f0f0f0;
+
+  /* شبكة خلفية */
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.028) 1px, transparent 1px);
+  background-size: 70px 70px; /* حجم المربعات */
+}
+
+.wrap{width:min(1100px, 92%); margin-inline:auto}
+.section{padding:96px 0}
+.section-title{font-size:28px; letter-spacing:.5px; margin:0 0 24px}
+.grid-2{display:grid; gap:20px; grid-template-columns:repeat(2,1fr)}
+.grid-3{display:grid; gap:20px; grid-template-columns:repeat(3,1fr)}
+@media (max-width:900px){.grid-2,.grid-3{grid-template-columns:1fr}}
+
+.nav{
+  position:fixed; top:0; z-index:10; backdrop-filter:saturate(150%) blur(8px);
+  background:linear-gradient(180deg,#0c0e12ee,#0c0e1200);
+  border-bottom:1px solid var(--border);
+}
+.nav .wrap{display:flex; align-items:center; justify-content:space-between; height:64px}
+.nav .brand{font-weight:700; letter-spacing:.5px}
+.nav nav{display:flex; gap:18px; align-items:center}
+.nav nav a{color:var(--muted); text-decoration:none; padding:8px 10px; border-radius:10px}
+.nav nav a:hover{color:var(--text); background:#ffffff0a}
+.nav .btn{background:#ffffff10; color:var(--text); border:1px solid var(--border)}
+
+.hero{min-height:80svh; display:grid; place-items:center; position:relative}
+.eyebrow{color:var(--muted); margin-bottom:0 0 8px}
+.title{font-size: clamp(36px, 8vw, 88px); margin:0}
+.subtitle{color:#cfcfcf; margin:10px 0 22px}
+.actions{display:flex; gap:12px; flex-wrap:wrap}
+
+.card {
+  width: 100%;
+  max-width: 500px; /* أصغر من about-box */
+  padding: 20px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  text-align: center;
+  color: #f5f5f5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+
+.btn{
+  display:inline-block; padding:10px 16px; border-radius:12px;
+  border:1px solid var(--border); background:#ffffff12; color:var(--text);
+  text-decoration:none; transition:transform .2s ease, background .2s ease;
+}
+.btn:hover{transform:translateY(-2px); background:#ffffff18}
+.btn.outline{background:transparent; border:1px solid #ffffff2a}
+.more{color:#dcdcdc}
+
+.form label{display:block; margin:10px 0}
+input,textarea{
+  width:100%; padding:12px 14px; border-radius:10px; border:1px solid var(--border);
+  background:#0f1116; color:var(--text); outline:none;
+}
+input:focus,textarea:focus{border-color:#ffffff35}
+
+footer {
+  text-align: center;
+  padding: 35px 0;
+  width: 100%;
+}
+
+footer .social-links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: 500;
+}
+
+footer .social-links a:hover {
+  color: #626363; /* لون أفتح عند المرور */
+}
+
+
+.glow-text {
+  color: #dcdbdbbd;
+  font-size: 75px; /* حجم كبير */
+  text-align: left;
+  padding-left: 5px;
+  text-transform: uppercase;
+  font-weight: 850;
+  letter-spacing: 6px;
+  position: relative;
+  top: 50px;
+  text-shadow: 
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 10px rgba(255, 255, 255, 0.3),
+    0 0 10px rgba(170, 170, 170, 0.10),
+    0 0 50px rgba(170, 170, 170, 0.10);
+}
+
+
+.about-box{
+  width: 100%;
+  max-width: 800px;
+  padding: 32px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.12);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+  text-align: center;
+  color: #f5f5f5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-box:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+}
+
+.about-box h3{
+  margin-bottom: 14px;
+  font-size: 30px;
+  letter-spacing: 1.5px;
+  color: #ffffff;
+}
+
+.about-box p{
+  font-size: 17px;
+  line-height: 1.8;
+  color: #cccccc;
+}
+
+#about {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* اضبطي البطل على اليسار لو كنتِ تبينه يسار */
+#hero{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;   /* يسار */
+  text-align:left;
+  padding-left: 60px;       /* مسافة من اليسار، عدّليها براحتك */
+  transform: none !important;
+}
+
+/* رجّعي Welcome/Hello لوضع طبيعي وأزيلي التحريك القديم */
+.sub-text,
+.intro-text{
+  position: static !important;
+  top: auto !important;
+  margin: 0 0 6px 0;        /* مسافة بسيطة تحت الترحيب */
+  line-height: 1.1;
+}
+
+/* خذي أي تحريك سابق عن الاسم */
+.glow-text{
+  position: static !important;
+  top: auto !important;
+  margin: 0;                /* بدون فراغات فوق الاسم */
+}
+
+#about .about-box,
+#about .card {
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
+  will-change: transform, box-shadow;
+}
+
+
+.eyebrow {
+  font-size: 20px;      /* كبر الخط */
+  font-weight: 700;     /* ثقّل الخط */
+  letter-spacing: 3px;  /* زيد المسافات بين الحروف لو حابة */
+}
+
+
+/* شبكة المشاريع: 4 مربعات */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.projects-grid .card {
+  max-width: none;
+  height: 220px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* تجاوب الشاشات */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 1) وسّطي حاوية Contact مهما كان نوعها (grid أو flex) */
+#contact .wrap {
+  display: grid !important;          /* نفرض Grid */
+  grid-template-columns: 1fr !important; /* عمود واحد */
+  place-items: center !important;    /* وسط أفقي + عمودي */
+  width: 100%;
+}
+
+/* 2) وسّطي نفس الصندوق وحددي عرضه */
+#contact .card,
+#contact .contact-box,
+#contact form {
+  max-width: 560px !important;   /* عرض منطقي للكارد */
+  width: 100% !important;
+  margin: 0 auto !important;     /* يوسّطه حتى لو كان Block */
+  text-align: left;              /* خليه يسار داخل الكارد (اختياري) */
+}
+
+/* 3) لو فيه padding يسحب القسم لليسار */
+#contact {
+  padding-left: 0 !important;
+}
+
+/* 4) لو كان فيه grid سابق بمربعات: أوقفيه فقط داخل كونتاكت */
+#contact .cards,
+#contact .grid-2 {
+  display: block !important;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #111; /* عشان يبان واضح فوق */
+  z-index: 1000; /* يخليه فوق كل شيء */
+}
