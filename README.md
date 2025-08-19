@@ -12,7 +12,3 @@ This is my personal portfolio website.
 - HTML
 - CSS
 - JavaScript
-
-## How to Run
-1. Clone the repository.
-2. Open `http://127.0.0.1:5500/index.html` in your browser.
